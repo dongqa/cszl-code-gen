@@ -1,0 +1,40 @@
+package ${entityPath};
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+import java.io.Serializable;
+import java.time.*;
+
+/**
+ * ${tableComment}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Data
+@TableName("${tableName}")
+public class ${entityName} implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
+#foreach ($field in $genFieldList)
+/**
+ * $!field.columnComment
+ */
+    #if($field.isPrimaryKey)
+    @TableId${field.idType}
+    #else
+    @TableField(value = "${field.columnName}")
+    #end
+    private $field.propertyType $field.propertyName;
+
+#end
+
+}

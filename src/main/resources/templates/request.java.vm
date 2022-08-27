@@ -1,0 +1,34 @@
+package ${requestPath};
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+import java.io.Serializable;
+import java.time.*;
+
+/**
+ * ${tableComment}请求参数
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Data
+@ApiModel(value = "${tableComment}请求参数", description = "${tableComment}请求参数")
+public class ${requestName} implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
+#foreach ($field in $genFieldList)
+/**
+ * $!field.columnComment
+ */
+    @ApiModelProperty(value = "$!field.columnComment")
+    private $field.propertyType $field.propertyName;
+
+#end
+
+}

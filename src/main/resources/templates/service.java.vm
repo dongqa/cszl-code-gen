@@ -1,0 +1,21 @@
+package  ${servicePath};
+
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${requestFullName};
+import ${entityFullName};
+import java.util.List;
+
+/**
+ * ${tableComment}服务层
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+public interface ${serviceName} extends IService<${entityName}> {
+
+    ${methods}
+
+}
+

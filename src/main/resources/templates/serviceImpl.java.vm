@@ -1,0 +1,22 @@
+package ${serviceImplPath};
+
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
+import ${mapperFullName};
+import ${entityFullName};
+import ${requestFullName};
+import ${serviceFullName};
+
+import java.util.List;
+
+
+@Service
+public class ${serviceImplName} extends ServiceImpl<${mapperName}, ${entityName}> implements ${serviceName} {
+
+    ${methods}
+
+}
